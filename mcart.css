@@ -12,3 +12,6 @@
 .noBorder li{
 	border:none;
 }
+.panel, .panel-heading {
+	border-radius: 0px;
+}
