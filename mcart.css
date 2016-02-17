@@ -1,0 +1,14 @@
+/* CSS declarations go here */
+.ulTotals {
+	list-style: none;
+}
+.panel-title {
+	display:inline;
+	margin-left: 1%;
+}
+.iconHeader{
+	display:inline;
+}
+.noBorder li{
+	border:none;
+}

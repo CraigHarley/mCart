@@ -1,0 +1,63 @@
+<template name="cart">
+	
+
+<div class="well">
+	<div class="panel panel-primary">
+		<div class="panel-heading">
+			<h3 class="iconHeader"><i class="fa fa-shopping-cart"></i></h3>
+			<h3 class="panel-title">Items in your cart:</h3>
+		</div>
+		<div class="panel-body">
+			<table class="table table-hover">
+				<thead>
+					<tr>
+						<th>Name:</th>
+						<th>Quantity:</th>
+						<th>Per Item:</th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					{{#each itemsInCart}}
+						{{> cartitem}}
+					{{/each}}
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+
+		<div class="panel panel-success">
+			<div class="panel-heading">
+				<h3 class="iconHeader"><i class="fa fa-money"></i></h3>
+				<h3 class="panel-title">Totals:</h3>
+			</div>
+			<div class="panel-body">
+				<ul class="ulTotals">
+				{{#with cartTotals 1.2}}
+					<li>Pre-Vat: £{{prevatTotal}}</li>
+					<li>Vat: £{{vatAmt}}</li>
+					<li>Total: £{{total}}</li>
+				{{/with}}
+				</ul>
+			</div>
+		</div>
+
+</div>
+
+
+</template>
+
+<template name="cartitem">
+	<tr>
+		<td>{{name}}</td>
+		<td>{{quantity}}</td>
+		<td>@ £{{price}} each</td>
+		<td>
+			<button type="button" class="btn btn-success btnPlus" value="{{_id}}">+</button>
+			<button type="button" class="btn btn-warning btnMinus" value="{{_id}}">-</button>
+			<button type="button" class="btn btn-danger btnRemove"  value="{{_id}}">x</button>
+		</td>
+	</tr>
+
+</template>
